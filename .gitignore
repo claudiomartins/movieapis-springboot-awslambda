@@ -1,5 +1,16 @@
+# Eclipse files
+.settings/
+.mvn/
+.project
+.classpath
+
+# Serverless temp files
+.serverless/
+*/.serverless/
+
 # Compiled class file
 *.class
+target/
 
 # Log file
 *.log
