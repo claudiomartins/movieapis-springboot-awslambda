@@ -31,7 +31,7 @@ public class MovieActors {
 	public String characterName;
 
 	@Column(name = "created_at")
-	public Timestamp createAt;
+	public Timestamp createdAt;
 
 	@Column(name = "modified_at")
 	public Timestamp modifiedAt;

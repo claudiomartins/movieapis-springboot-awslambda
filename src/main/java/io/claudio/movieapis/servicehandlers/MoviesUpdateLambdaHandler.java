@@ -1,5 +1,7 @@
 package io.claudio.movieapis.servicehandlers;
 
+import java.sql.Timestamp;
+
 import org.apache.commons.lang3.StringUtils;
 
 import com.amazonaws.services.lambda.runtime.Context;
@@ -37,6 +39,7 @@ public class MoviesUpdateLambdaHandler extends SpringServiceHandler {
 
 			currentMovie.title = newMovieData.title;
 			currentMovie.releaseYear = newMovieData.releaseYear;
+			currentMovie.modifiedAt = new Timestamp(System.currentTimeMillis());
 
 			currentMovie = getMovieRepository().save(currentMovie);
 

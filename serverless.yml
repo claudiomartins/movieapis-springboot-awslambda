@@ -42,13 +42,6 @@ functions:
           path: movies/{id}/actor
           method: put
           cors: true
-  movies-delete:
-    handler: io.claudio.movieapis.servicehandlers.MoviesDeleteLambdaHandler
-    events:
-      - http:
-          path: movies
-          method: delete
-          cors: true
   actors-query:
     handler: io.claudio.movieapis.servicehandlers.ActorsQueryLambdaHandler
     events:
