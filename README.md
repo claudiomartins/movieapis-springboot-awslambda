@@ -19,11 +19,11 @@ This application focused on using AWS Lambda to run its services. AWS Lambda doe
 
 There a few important notes here:
 
-  a) all configuration for the Serverless framework is located at the 'serverless.yml' file
-  b) this file consolidates all routes to be configured on AWS API Gateway, the lambda functions and how to connect one with the other
-  c) there are two important architecture decisions here:
-  c.1) this is a single Spring Boot application (fat jar) with both services for Movies and Actors. Ideally, different domains would be independent applications following a micro-services architecture, but for the sake of simplicity both domains are in the same app and sharing the same datastore
-  c.2) for each type of endpoint method, I created a different Lambda function and API Gateway resource. The reasoning here is that, in a traditional serverless production environment you would want these services to scale independently as each one has a different footprint, latency, and while managing you want greater visibility of the costs associated with each type of service to determine potential enhancements or rearchitecture
+  a) all configuration for the Serverless framework is located at the 'serverless.yml' file<br/>
+  b) this file consolidates all routes to be configured on AWS API Gateway, the lambda functions and how to connect one with the other<br/>
+  c) there are two important architecture decisions here:<br/>
+  c.1) this is a single Spring Boot application (fat jar) with both services for Movies and Actors. Ideally, different domains would be independent applications following a micro-services architecture, but for the sake of simplicity both domains are in the same app and sharing the same datastore<br/>
+  c.2) for each type of endpoint method, I created a different Lambda function and API Gateway resource. The reasoning here is that, in a traditional serverless production environment you would want these services to scale independently as each one has a different footprint, latency, and while managing you want greater visibility of the costs associated with each type of service to determine potential enhancements or rearchitecture<br/>
   d) a flaw of this approach is the increased number of database connections as there's no Connection Pool to be shared - in an AWS environment, the higher the number of the connections, the higher the size of the instance - then again, for a serverless approach, the most ideal candidate in the AWS universe is DynamoDB
 
 
